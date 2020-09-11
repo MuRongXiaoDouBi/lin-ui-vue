@@ -1,0 +1,8 @@
+import {{firstLetterToUpperCase name}} from './src/index';
+import { App } from 'vue'
+/* istanbul ignore next */
+{{firstLetterToUpperCase name}}.install = function (app: App) {
+    app.component({{firstLetterToUpperCase name}}.name, {{firstLetterToUpperCase name}});
+};
+
+export default {{firstLetterToUpperCase name}};
