@@ -1,8 +1,8 @@
-import Button from './src/index';
+import LButton from './src/index';
 import { App } from 'vue'
 /* istanbul ignore next */
-Button.install = function (app: App) {
-    app.component(Button.name, Button);
+LButton.install = function (app: App) {
+    app.component(LButton.name, LButton);
 };
 
-export default Button;
+export default LButton;
