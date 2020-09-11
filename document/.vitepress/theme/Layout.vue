@@ -33,20 +33,6 @@ export default {
     SideBar,
     Page,
     Display,
-  },
-  setup() {
-    const pageData = usePageData();
-    const isHome = ref(true);
-    watch(
-      () => pageData.value.title,
-      () => {
-        isHome.value =
-          pageData.value.frontmatter.layout === "home" ? true : false;
-      }
-    );
-    return {
-      isHome,
-    };
-  },
+  }
 };
 </script>
