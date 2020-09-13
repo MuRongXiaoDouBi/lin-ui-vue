@@ -10,7 +10,8 @@
     "build": "webpack --config build/webpack.build.config.js",
     "doc:dev": "vitepress dev document",
     "doc:build": "vitepress build document",
-    "compile": "gulp --gulpfile build/gulpfile.js"
+    "compile": "gulp --gulpfile build/gulpfile.js",
+    "new": "plop"
   },
   "keywords": [],
   "author": "",
