@@ -14,10 +14,11 @@ export const components: Component[] = [
         children: [
           {
             title: "button",
-            link: 'button'
+            link: '/button'
           },
           {
-            title: "button",
+            title: "icon",
+            link: "/icon"
           }
         ]
     }

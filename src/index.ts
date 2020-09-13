@@ -1,7 +1,8 @@
-import LButton from './components/Button'
+import Button from './components/Button'
+import Icon from './components/Icon'
 import { App } from 'vue'
 const components = [
-    LButton
+    Button
 ]
 
 const install = function (Vue: App, opts = {}) {
@@ -16,5 +17,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-    LButton
+    Button,
+    Icon
 }
