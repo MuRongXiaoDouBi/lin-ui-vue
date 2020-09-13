@@ -1,9 +1,9 @@
 // vue.config.js
 
 module.exports = {
-  // 将 examples 目录添加为新的页面
   pages: {
     index: {
+      title: 'Lin UI',
       // page 的入口
       entry: "examples/main.ts",
       // 模板来源
