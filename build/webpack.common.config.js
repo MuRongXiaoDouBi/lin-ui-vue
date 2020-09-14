@@ -38,7 +38,7 @@ module.exports = {
                 options: {
                   presets: [require.resolve('@babel/preset-env')],
                   plugins: [
-                    require.resolve('@ant-design-vue/babel-plugin-jsx'),
+                    require.resolve('@vue/babel-plugin-jsx'),
                     require.resolve('@babel/plugin-proposal-object-rest-spread'),
                   ],
                 },
