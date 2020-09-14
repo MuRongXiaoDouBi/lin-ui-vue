@@ -1,5 +1,5 @@
 import { defineComponent, onMounted } from "vue";
-import './index.less'
+
 const App = defineComponent({
   name: "LButton",
   props: {

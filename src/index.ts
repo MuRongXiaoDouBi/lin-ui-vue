@@ -1,7 +1,7 @@
-import LButton from './components/Button'
+import Button from './components/Button/index'
 import { App } from 'vue'
 const components = [
-    LButton
+    Button
 ]
 
 const install = function (Vue: App, opts = {}) {
@@ -9,12 +9,11 @@ const install = function (Vue: App, opts = {}) {
         Vue.component(component.name, component);
     });
 };
-// @ts-ignore: Unreachable code error
-if (typeof window !== 'undefined' && window.Vue) {
-    // @ts-ignore: Unreachable code error
-    install(window.Vue);
+
+export {
+    Button
 }
 
 export default {
-    LButton
+    install
 }
