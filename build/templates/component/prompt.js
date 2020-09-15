@@ -21,15 +21,15 @@ module.exports = {
     const actions = [{
       type,
       path: `src/components/${name}/index.ts`,
-      templateFile: 'plop-templates/component/index.ts.hbs'
+      templateFile: 'build/templates/component/index.ts.hbs'
     }, {
       type,
       path: `src/components/${name}/src/index.tsx`,
-      templateFile: 'plop-templates/component/index.tsx.hbs'
+      templateFile: 'build/templates/component/index.tsx.hbs'
     }, {
       type,
       path: `src/components/${name}/src/index.less`,
-      templateFile: 'plop-templates/component/index.less.hbs'
+      templateFile: 'build/templates/component/index.less.hbs'
     }]
     return actions
   }
