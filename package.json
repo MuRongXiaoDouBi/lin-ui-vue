@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "demo:dev": "vue-cli-service serve",
+    "demo:dev": "cross-env NODE_ENV=development vue-cli-service serve",
     "demo:build": "vue-cli-service build",
     "test": "cross-env NODE_ENV=test jest --config jest.config.js",
     "build": "webpack --config build/webpack.build.config.js",
