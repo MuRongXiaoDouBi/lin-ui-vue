@@ -1,8 +1,10 @@
 import Button from './src/index';
+import { defineComponent } from "vue";
 import { App } from 'vue'
+const component = defineComponent(Button)
 /* istanbul ignore next */
-Button.install = function (app: App) {
-    app.component(Button.name, Button);
+component.install = function (app: App) {
+    app.component(component.name, component);
 };
 
-export default Button;
+export default component;

@@ -1,6 +1,4 @@
-import { defineComponent, onMounted } from "vue";
-
-const App = defineComponent({
+const App = {
   name: "LButton",
   props: {
     title: {
@@ -17,12 +15,11 @@ const App = defineComponent({
     return () => (
       <div>
         <button onClick={(event) => handleClick(event, 123)} class="l-button">
-          button
+          {props.title}
         </button>
-        {v}
       </div>
     );
   },
-});
+}
 
 export default App;
