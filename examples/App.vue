@@ -4,35 +4,35 @@
       <h1>lin-ui</h1>
     </header>
     <section class="l-content">
-      <lin-list-box :title="item.title" :list="item.children" v-for="(item, index) in list" :key="index"></lin-list-box>
+      <lin-list-box v-for="(item, index) in list" :key="index" :title="item.title" :list="item.children" />
     </section>
-    <LinView />
+    <lin-view />
   </div>
 </template>
 
 <script lang="ts">
-import LinView from "./components/LinView";
-import LinListBox from "./components/LinListBox";
-import { useRouter } from "vue-router";
-import { reactive } from "vue";
-import { components } from "./components";
+import LinView from './components/LinView'
+import LinListBox from './components/LinListBox'
+import { useRouter } from 'vue-router'
+import { reactive } from 'vue'
+import { components } from './components'
 export default {
   components: {
     LinView,
-    LinListBox,
+    LinListBox
   },
   setup() {
-    const router = useRouter();
+    const router = useRouter()
     const handleClick = () => {
-      router.push("/button");
-    };
-    const list = reactive(components);
+      router.push('/button')
+    }
+    const list = reactive(components)
     return {
       handleClick,
-      list,
-    };
-  },
-};
+      list
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>

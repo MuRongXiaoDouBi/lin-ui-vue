@@ -2,12 +2,12 @@
   <div class="container">
     <div class="l-list-box">
       <h4 @click="handleClickShow">
-        {{title}}
-        <i :class="show ? 'active' : ''"></i>
+        {{ title }}
+        <i :class="show ? 'active' : ''" />
       </h4>
       <ul v-show="show">
         <li v-for="(item, index) in list" :key="index">
-          <span @click="go(item.link)">{{item.title}}</span>
+          <span @click="go(item.link)">{{ item.title }}</span>
         </li>
       </ul>
     </div>
@@ -15,24 +15,24 @@
 </template>
 
 <script lang="ts">
-import { reactive, ref } from "vue";
-import { useRouter } from 'vue-router';
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 export default {
-  name: "LinListBox",
+  name: 'LinListBox',
   props: {
     title: {
       type: String,
-      default: "",
+      default: ''
     },
     list: {
-      type: Array,
-    },
+      type: Array
+    }
   },
-  setup(props) {
-    const show = ref(false);
+  setup() {
+    const show = ref(false)
     const handleClickShow = () => {
-      show.value = !show.value;
-    };
+      show.value = !show.value
+    }
     const router = useRouter()
     const go = (link) => {
       if (link) {
@@ -43,9 +43,9 @@ export default {
       show,
       handleClickShow,
       go
-    };
-  },
-};
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>

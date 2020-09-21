@@ -5,10 +5,10 @@ const routes = [
   {
     path: '/button',
     component: button
-  },
+  }
 ]
 
 export default createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 })

@@ -1,25 +1,21 @@
 const App = {
-  name: "LButton",
+  name: 'LButton',
   props: {
     title: {
       type: String,
-      default: "",
-    },
+      default: ''
+    }
   },
   setup(props) {
-    const handleClick = (event: Event, state: number) => {
-      console.log(event);
-      console.log(state);
-    };
-    const v = <div class="1bd">123123</div>;
+    const handleClick = () => {}
     return () => (
       <div>
-        <button onClick={(event) => handleClick(event, 123)} class="l-button">
+        <button onClick={() => handleClick()} class="l-button">
           {props.title}
         </button>
       </div>
-    );
-  },
+    )
+  }
 }
 
-export default App;
+export default App
