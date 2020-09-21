@@ -1,50 +1,52 @@
 <template>
   <div class="l-page" :class="type">
     <header class="header">
-      <h1>{{title}}</h1>
-      <i @click="back" class="lic-back">返回</i>
+      <h1>{{ title }}</h1>
+      <i class="lic-back" @click="back">返回</i>
     </header>
     <div class="wrapper">
       <section v-show="desc" class="desc">
-        <slot name="desc">{{desc}}</slot>
+        <slot name="desc">
+          {{ desc }}
+        </slot>
       </section>
       <main class="content">
-        <slot></slot>
+        <slot />
       </main>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { useRouter } from "vue-router";
+import { useRouter } from 'vue-router'
 
 export default {
-  name: "LinPage",
+  name: 'LinPage',
   props: {
     title: {
       type: String,
-      default: "",
-      required: true,
+      default: '',
+      required: true
     },
     type: {
       type: String,
-      default: "",
+      default: ''
     },
     desc: {
       type: String,
-      default: "",
-    },
+      default: ''
+    }
   },
   setup() {
-    const router = useRouter();
+    const router = useRouter()
     const back = () => {
-      router.back();
-    };
+      router.back()
+    }
     return {
-      back,
-    };
-  },
-};
+      back
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>

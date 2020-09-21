@@ -1,19 +1,19 @@
 import Button from './components/Button/index'
 import { App } from 'vue'
 const components = [
-    Button
+  Button
 ]
 
-const install = function (Vue: App, opts = {}) {
-    components.forEach(component => {
-        Vue.component(component.name, component);
-    });
-};
+const install = function (Vue: App) {
+  components.forEach(component => {
+    Vue.component(component.name, component)
+  })
+}
 
 export {
-    Button
+  Button
 }
 
 export default {
-    install
+  install
 }

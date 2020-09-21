@@ -8,8 +8,8 @@
 
 <script lang="ts">
 export default {
-  name: "LinView",
-};
+  name: 'LinView'
+}
 </script>
 
 <style lang="less" scoped>
