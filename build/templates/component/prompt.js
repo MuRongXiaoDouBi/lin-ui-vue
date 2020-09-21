@@ -30,6 +30,10 @@ module.exports = {
       type,
       path: `src/components/${name}/src/index.less`,
       templateFile: 'build/templates/component/index.less.hbs'
+    }, {
+      type,
+      path: `src/components/${name}/__tests__/index.test.ts`,
+      templateFile: 'build/templates/component/index.test.ts.hbs'
     }]
     return actions
   }
