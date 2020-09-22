@@ -10,6 +10,7 @@ module.exports = {
       'always',
       [
         'EsLint',
+        'tsconfig.json',
         'Github',
         'VuePress',
         'package.json',
