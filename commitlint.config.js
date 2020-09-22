@@ -10,9 +10,10 @@ module.exports = {
       'always',
       [
         'EsLint',
+        'PlopTemplate',
         'tsconfig.json',
         'Github',
-        'VuePress',
+        'VitePress',
         'package.json',
         'License',
         'TravisCI',
