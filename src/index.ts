@@ -1,7 +1,10 @@
 import Button from './components/Button/index'
+import Price from './components/Price/index'
+
 import { App } from 'vue'
 const components = [
-  Button
+  Button,
+  Price
 ]
 
 const install = function (Vue: App) {
@@ -11,7 +14,8 @@ const install = function (Vue: App) {
 }
 
 export {
-  Button
+  Button,
+  Price
 }
 
 export default {
