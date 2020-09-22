@@ -1,11 +1,14 @@
-import { defineComponent, onMounted } from "vue";
+import { ComponentCustomProps, SetupContext } from "vue";
 import './index.less'
-const App = defineComponent({
-  name: "L{{firstLetterToUpperCase name}}",
+
+export interface {{firstLetterToUpperCase name}}Props extends ComponentCustomProps {}
+
+const App = {
+  name: 'l-{{name}}',
   props: {
   },
-  setup(props) {
-  },
-});
+  setup(props: {{firstLetterToUpperCase name}}Props, ctx: SetupContext) {
+  }
+}
 
-export default App;
+export default App

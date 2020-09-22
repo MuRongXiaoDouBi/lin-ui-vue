@@ -3,7 +3,7 @@ import { App, defineComponent } from 'vue'
 const component = defineComponent({{firstLetterToUpperCase name}})
 /* istanbul ignore next */
 component.install = function (app: App) {
-    app.component(component.name, component);
+    app.component(component.name, component)
 };
 
-export default {{firstLetterToUpperCase name}};
+export default {{firstLetterToUpperCase name}}
