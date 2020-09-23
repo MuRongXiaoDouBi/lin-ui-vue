@@ -1,8 +1,26 @@
-import { defineComponent, watch, toRef } from 'vue'
+import { ComponentCustomProps, watch, toRef } from 'vue'
 import classnames from 'classnames'
 import './index.less'
 
-const App = defineComponent({
+export interface PriceProps extends ComponentCustomProps {
+  unit?: string,
+  size?: string,
+  color?: string,
+  bold?: number,
+  unitColor?: string,
+  unitSize: String,
+  unitBold?: number,
+  modelValue: string,
+  mode?: 'number' | 'span',
+  valueColor?: string,
+  valueSize?: string,
+  deleted?: boolean,
+  delColor?: string,
+  reserveDigit?: number,
+  autofix?: boolean
+}
+
+const App = {
   name: 'LPrice',
   props: {
     unit: {
@@ -53,7 +71,7 @@ const App = defineComponent({
       priceInteger = null
       priceDecimal = null
       const countToNumber = Number(value.value)
-      const isText = isNaN(Number(countToNumber)) || (props.mode === 'text')
+      const isText = isNaN(Number(countToNumber)) || (props.mode === 'span')
       if (!isText && props.autofix) {
         const result = countToNumber.toFixed(props.reserveDigit)
         const price = result.toString().split('.')
@@ -112,6 +130,6 @@ const App = defineComponent({
       </div>
     )
   }
-})
+}
 
 export default App

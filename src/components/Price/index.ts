@@ -1,8 +1,9 @@
 import Price from './src/index'
-import { App } from 'vue'
+import { defineComponent, App } from 'vue'
+const component = defineComponent(Price)
 /* istanbul ignore next */
-Price.install = function (app: App) {
-  app.component(Price.name, Price)
+component.install = function (app: App) {
+  app.component(component.name, component)
 }
 
-export default Price
+export default component
