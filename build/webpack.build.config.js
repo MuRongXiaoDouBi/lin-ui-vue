@@ -1,51 +1,55 @@
 const path = require('path')
-const fs = require('fs')
 const webpack = require('webpack')
-const { merge } = require('webpack-merge')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const webpackCommonConfig = require('./webpack.common.config')
-const modules = {}
-const cPath = path.join(__dirname, '../src/components')
-const files = fs.readdirSync(cPath)
+const WebpackBar = require('webpackbar');
+const { VueLoaderPlugin } = require('vue-loader')
 
-if (files) {
-  files.forEach(name => {
-    const p = path.join(cPath, name)
-    const ignoreDir = ['_util', 'styles']
-    if (fs.statSync(p).isDirectory() && !ignoreDir.includes(name)) {
-      modules[name] = `${p}/src/index.tsx`
-    }
-  })
-}
-
-module.exports = merge(webpackCommonConfig, {
+module.exports = {
   mode: 'production',
-  entry: modules,
+  entry: path.resolve(__dirname, '../src/index.ts'),
   plugins: [
-    new webpack.optimize.ModuleConcatenationPlugin(),
+    new VueLoaderPlugin(),
     new webpack.LoaderOptionsPlugin({
-      minimize: true,
+      minimize: false,
     }),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name]/index.min.css', // 打包后从js文件中提取出来的css文件名称
+    new WebpackBar({
+      name: '🚚  Lin UI Vue Tools',
+      color: '#3663BE',
     }),
   ],
-  optimization: {
-    minimizer: [
-      new OptimizeCSSAssetsPlugin({}),
-      new TerserPlugin({
-        sourceMap: true,
-      }),
-    ],
-  },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name]/index.min.js',
-    library: ['[name]'],
+    filename: 'index.min.js',
+    library: 'LinUI',
     libraryTarget: 'umd',
+  },
+  resolve: {
+    modules: ['node_modules', path.join(__dirname, '../node_modules')],
+    extensions: ['.js', '.jsx', '.vue', '.md', '.json', '.ts', '.tsx'],
+    alias: {
+      '@': process.cwd(),
+    },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        use: 'vue-loader',
+      },
+      {
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      },
+    ],
+  },
+  externals: {
+    vue: {
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
+    }
   }
-})
+}
