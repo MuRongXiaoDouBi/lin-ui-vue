@@ -27,7 +27,7 @@ module.exports = {
     '/node_modules/'
   ],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
+    '^@/(.*)$': '<rootDir>/packages/$1'
   },
   testEnvironment: 'jsdom',
   globals: {

@@ -9,11 +9,11 @@
     "build:demo": "cross-env NODE_ENV=production vue-cli-service build",
     "dev:docs": "vitepress dev document",
     "build:docs": "vitepress build document",
-    "lint": "eslint -c ./.eslintrc --fix --ext .jsx,.js,.vue,.ts,.tsx ./src",
+    "lint": "eslint -c ./.eslintrc --fix --ext .jsx,.js,.vue,.ts,.tsx ./packages",
     "lint:docs": "eslint -c ./.eslintrc --fix --ext .jsx,.js,.vue,.md ./document",
     "lint:demo": "eslint -c ./.eslintrc --fix --ext .jsx,.js,.vue,.ts,.tsx ./examples",
     "lint:types": "eslint -c ./.eslintrc --fix --ext .ts ./types",
-    "lint:style": "stylelint \"{src,examples}/**/*.less\" --syntax --fix less",
+    "lint:style": "stylelint \"{packages,examples}/**/*.less\" --syntax --fix less",
     "compile": "gulp --gulpfile build/gulpfile.js",
     "test": "cross-env NODE_ENV=test jest --config jest.config.js",
     "new": "plop"
