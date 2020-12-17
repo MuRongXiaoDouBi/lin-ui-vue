@@ -25,7 +25,8 @@ module.exports = {
         '.gitignore',
         'commitlint',
         'Example',
-        'Core'
+        'Core',
+        'Lerna'
       ]
     ]
   }

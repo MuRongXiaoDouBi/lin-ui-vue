@@ -1,0 +1,9 @@
+{
+  "name": "@lin-ui-vue/button",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "木荣 <372638156@qq.com>",
+  "homepage": "https://github.com/MuRongXiaoDouBi/lin-ui-vue#readme",
+  "license": "ISC",
+  "main": "dist/main.js"
+}
