@@ -1,4 +1,4 @@
-import Button from './components/Button/index'
+import Button from '@lin-ui-vue/button'
 import { App } from 'vue'
 const components = [
   Button

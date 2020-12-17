@@ -24,7 +24,9 @@ module.exports = {
         '.editorconfig',
         '.gitignore',
         'commitlint',
-        'Example'
+        'Example',
+        'Core',
+        'Lerna'
       ]
     ]
   }
